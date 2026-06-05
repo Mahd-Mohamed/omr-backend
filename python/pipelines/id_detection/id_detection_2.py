@@ -4,10 +4,11 @@ import os
 import json
 import re
 import glob
-# import REF_PATH from 
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'models'))
+from configs import REF_PATH
 
 # ========= SETTINGS =========
-REF_PATH = "C:\\Graduation\\graduation-backend\\python\\models\\reference.png"
 JSON_OUT = "ids_results.json"
 
 X_START_RATIO, X_END_RATIO = 0.365, 0.56
