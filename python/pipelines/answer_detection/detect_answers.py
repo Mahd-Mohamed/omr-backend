@@ -8,6 +8,7 @@ import torch.nn as nn
 import cv2
 import numpy as np
 import os
+import math
 
 from pymupdf.table import bbox_getter
 
@@ -351,7 +352,7 @@ def get_questions(image, q_no = 100):
 
     area_num = 10
     if q_no:
-        area_num = int(q_no // 10 + 1)
+        area_num = math.ceil(q_no / 10)
     
     contours = get_contours(image)
     candidates = filter_vertical_rectangles(contours)
